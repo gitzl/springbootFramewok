@@ -1,0 +1,38 @@
+server:
+  port: 8087
+
+spring:
+  application:
+    name: springbootDeamo
+    version: 1.0-SNAPSHOT
+  jmx:
+    enabled: false
+  database:
+    name: demo-db
+  datasource:
+    username: root
+    password: king
+    sql-script-encoding: utf-8
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/builderdb?useUnicode=true&characterEncoding=utf-8
+    initial-size: 1
+    max-active: 20
+    max-idle: 20
+    min-idle: 5
+    max-wait: 60000
+    time-between-eviction-runs-millis: 60000
+    min-evictable-idle-time-millis: 300000
+    validation-query: SELECT 'x'
+    test-while-idle: true
+    test-on-borrow: false
+    test-on-return: false
+    pool-prepared-statements: false
+    max-open-prepared-statements: 20
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL5InnoDBDialect
+    hibernate:
+      ddl-auto: update
+    show-sql: false
+  aop:
+    auto: true
+    proxy-target-class: false
